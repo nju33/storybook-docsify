@@ -1,0 +1,5 @@
+{
+  "*.{ts,tsx,js,jsx}": ["eslint --fix", "git add"],
+  "!(*.stories.*|*.snap).{ts,tsx,js,jsx}": ["jest --findRelatedTests"],
+  "*.{yml,json}": ["prettier --write", "git add"]
+}

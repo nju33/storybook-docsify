@@ -1,0 +1,53 @@
+{
+  "name": "@nju33/storybook-docsify",
+  "version": "0.0.0",
+  "main": "index.js",
+  "description": "Storybook and Docsify integrator (But it's altmost Docsify)",
+  "files": [
+    "dist"
+  ],
+  "repository": "git@github.com:nju33/storybook-docsify.git",
+  "author": "nju33 <nju33.ki@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "storybook",
+    "docsify"
+  ],
+  "peerDependencies": {
+    "react": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/cli": "^5.1.11",
+    "@storybook/react": "^5.1.11",
+    "@types/node": "^12.7.4",
+    "@types/react": "^16.9.2",
+    "@types/storybook__react": "^4.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
+    "babel-loader": "^8.0.6",
+    "docsify-cli": "^4.3.0",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-config-xo-space": "^0.21.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "prettier": "^1.18.2",
+    "react": "^16.9.0",
+    "ts-loader": "^6.0.4",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "@storybook/addons": "^5.1.11",
+    "@storybook/core-events": "^5.1.11"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 7007 -c .storybook-at-test --ci --quiet --static-dir component",
+    "build-storybook": "build-storybook",
+    "build": "tsc",
+    "prepublish": "yarn build"
+  }
+}

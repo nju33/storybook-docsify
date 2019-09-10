@@ -1,0 +1,1 @@
+export const STORYBOOK_CHANGE_ID = 'STORYBOOK_CHANGE_ID' as const;
