@@ -1,5 +1,5 @@
 {
-  "name": "@nju33/storybook-docsify",
+  "name": "@nju33/storybook__addon-docsify",
   "version": "0.0.1-1",
   "main": "index.js",
   "description": "Storybook and Docsify integrator (But it's altmost Docsify)",
