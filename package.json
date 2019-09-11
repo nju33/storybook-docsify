@@ -13,8 +13,11 @@
     "storybook",
     "docsify"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
-    "react": "^16.9.0"
+    "react": "^16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
