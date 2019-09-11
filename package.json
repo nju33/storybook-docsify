@@ -1,6 +1,6 @@
 {
   "name": "@nju33/storybook__addon-docsify",
-  "version": "0.0.1-2",
+  "version": "0.0.1-3",
   "main": "index.js",
   "description": "Storybook and Docsify integrator (But it's altmost Docsify)",
   "files": [
