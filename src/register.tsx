@@ -71,8 +71,8 @@ export const DocsifyPanel: FC<DocsifyPanelProps> = props => {
 };
 
 addons.register(ADDON_ID, api => {
-  const render = ({active}: {active: boolean}) => (
-    <DocsifyPanel api={api} active={active} />
+  const render = ({active, key}: {active: boolean; key: string}) => (
+    <DocsifyPanel api={api} active={active} key={key} />
   );
 
   const title = 'Docsify';
