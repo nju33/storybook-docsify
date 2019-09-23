@@ -1,6 +1,6 @@
 {
   "name": "@nju33/storybook__addon-docsify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "description": "Storybook and Docsify integrator (But it's altmost Docsify)",
   "files": [
@@ -52,6 +52,7 @@
     "storybook": "start-storybook -p 7007 -c .storybook-at-test --ci --quiet --static-dir component",
     "build-storybook": "build-storybook",
     "build": "tsc",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepublish": "yarn build"
   }
 }
