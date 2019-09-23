@@ -2,7 +2,7 @@ import * as React from 'react';
 import {FC, useReducer, useMemo, useCallback, useEffect} from 'react';
 import {STORY_CHANGED} from '@storybook/core-events';
 import addons, {types} from '@storybook/addons';
-import {API} from '@storybook/api';
+import {API, useParameter} from '@storybook/api';
 import {
   reducer,
   initialState,
@@ -11,7 +11,7 @@ import {
 } from './duck/storybook';
 
 const ADDON_ID = 'docsify' as const;
-// const PARAM_KEY = 'docsify' as const;
+const PARAM_KEY = 'docsify' as const;
 const PANEL_ID = 'docsify/panel' as const;
 
 export interface DocsifyPanelProps {
@@ -19,7 +19,7 @@ export interface DocsifyPanelProps {
   active: boolean;
 }
 
-export interface DocsifyPanelParams {
+export interface DocsifyParam {
   path?: string;
 }
 
@@ -32,7 +32,12 @@ const useOperators = (dispatch: (action: {type: string}) => any) => {
 export const DocsifyPanel: FC<DocsifyPanelProps> = props => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {changeId} = useOperators(dispatch as (action: {type: string}) => any);
-  const documentPath = useMemo(() => getPath(state), [state]);
+  const param = useParameter<DocsifyParam>(PARAM_KEY, {});
+  console.log(param.path);
+  const documentPath = useMemo(() => param.path || getPath(state), [
+    state.id,
+    param.path,
+  ]);
 
   const onStoryChange = useCallback(
     (id: string) => {
@@ -61,6 +66,8 @@ export const DocsifyPanel: FC<DocsifyPanelProps> = props => {
   if (!props.active) {
     return null;
   }
+
+  console.log(documentPath);
 
   return (
     <iframe
