@@ -33,7 +33,6 @@ export const DocsifyPanel: FC<DocsifyPanelProps> = props => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {changeId} = useOperators(dispatch as (action: {type: string}) => any);
   const param = useParameter<DocsifyParam>(PARAM_KEY, {});
-  console.log(param.path);
   const documentPath = useMemo(() => param.path || getPath(state), [
     state.id,
     param.path,
