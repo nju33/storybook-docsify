@@ -66,8 +66,6 @@ export const DocsifyPanel: FC<DocsifyPanelProps> = props => {
     return null;
   }
 
-  console.log(documentPath);
-
   return (
     <iframe
       src={`/index.html#/${documentPath}`}
